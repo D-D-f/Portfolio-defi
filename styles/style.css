@@ -1,0 +1,590 @@
+:root {
+  --colorBgBlue: #7895b2;
+  --colorTextBgBlue: #f5efe6;
+  --colorTitle: #dd5353;
+  --colorTextBoldBgBlue: #e8dfca;
+}
+
+@font-face {
+  font-family: "NunitoRegular";
+  src: url("../assets/fonts/Nunito-Sans-Regular.eot");
+  src: url("../assets/fonts/Nunito-Sans-Regular.ttf");
+  src: url("../assets/fonts/Nunito-Sans-Regular.woff");
+}
+
+@font-face {
+  font-family: "Nunito900";
+  src: url("../assets/fonts/Nunito-Sans-900.eot");
+  src: url("../assets/fonts/Nunito-Sans-900.ttf");
+  src: url("../assets/fonts/Nunito-Sans-900.woff");
+}
+
+/* petit reset minimal de base */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* On normalise la taille d'écriture sur l'élément html (root) à 10px. Donc 1rem = 10px */
+  font-size: 62.5%;
+
+  -webkit-text-size-adjust: none; /*─ Debug font size on iphone when landscape orientation ─*/
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  -ms-text-size-adjust: 100%;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  cursor: default;
+  scroll-behavior: smooth;
+  tab-size: 4;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* On remet la taille de la police d'écriture à 16px, vu que 1rem = 10px, 1.6rem = 16px. Donc par rapport au body 1em = 16px */
+  font-size: 1.6rem;
+  overflow-x: hidden;
+  text-rendering: optimizeSpeed;
+  position: relative;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  color: #131418;
+  background-color: #efefef;
+}
+
+img,
+video,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+img,
+video {
+  width: 100%;
+  height: auto;
+}
+
+svg {
+  display: inline-block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Preventing Text Overflow */
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* CONTAINER */
+
+.container {
+  margin: 0 15%;
+}
+
+p {
+  font-family: "NunitoRegular";
+}
+
+/* Barre de navigation */
+
+nav {
+  position: sticky;
+  top: 0;
+  font-family: "NunitoRegular";
+}
+
+#menu {
+  background-color: #fff;
+}
+
+#nav_contact,
+#menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+#nav_contact {
+  font-family: "Nunito900";
+  background-color: var(--colorBgBlue);
+  color: var(--colorTextBgBlue);
+}
+
+#nav_contact a {
+  color: var(--colorTextBgBlue);
+}
+
+#nav_contact a svg {
+  margin-right: 1rem;
+}
+
+#nav_reseaux {
+  display: flex;
+}
+
+#nav_reseaux svg {
+  fill: var(--colorTextBgBlue);
+}
+
+#nav_reseaux svg:nth-of-type(2) {
+  margin: 0 1rem;
+}
+
+#nav_contact a {
+  display: flex;
+  align-items: center;
+}
+
+#nav_contact a svg {
+  margin-left: 1rem;
+}
+
+#nav_contact a svg,
+#nav_reseaux svg,
+#nav_contact a svg {
+  width: 2rem;
+}
+
+#menu h1 {
+  font-family: "Nunito900";
+}
+
+#menu h1 span {
+  color: var(--colorBgBlue);
+}
+
+#menu ul {
+  display: flex;
+}
+
+#menu ul li {
+  margin-left: 1rem;
+}
+
+#menu ul li a {
+  color: black;
+}
+
+#menu ul li a:hover {
+  font-family: "Nunito900";
+}
+
+/* HEADER */
+
+header {
+  height: 50rem;
+  background-color: var(--colorTextBoldBgBlue);
+  font-family: "NunitoRegular";
+}
+
+#header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 50rem;
+  background: center / contain no-repeat
+    url("../assets/images/home-page-header.png");
+}
+
+.texte_header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.texte_header h2 span {
+  font-family: "Nunito900";
+}
+
+.texte_header a {
+  font-family: "Nunito900";
+  color: var(--colorBgBlue);
+}
+
+.texte_header h2,
+.texte_header p {
+  flex: 0.3;
+}
+
+.texte_header:nth-of-type(3) {
+  align-items: flex-end;
+}
+
+.texte_header:nth-of-type(3) h2:nth-of-type(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.texte_header:nth-of-type(3) h2:nth-of-type(2) svg {
+  width: 5rem;
+}
+
+/* SECTION */
+
+section:nth-of-type(1),
+section:nth-of-type(2) {
+  display: flex;
+  margin: 9.6rem 0;
+}
+
+.tags {
+  flex-basis: 40%;
+  flex: 1;
+  margin-right: 2rem;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  background-color: var(--colorBgBlue);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.tag h2 {
+  color: var(--colorTextBgBlue);
+  font-family: "Nunito900";
+}
+
+.tags .tag svg path {
+  fill: var(--colorTextBgBlue);
+}
+
+.tags .tag svg {
+  width: 3rem;
+  margin-right: 1rem;
+}
+
+.help {
+  flex: 1.5;
+}
+
+.help h2 {
+  font-family: "Nunito900";
+}
+
+.help p {
+  margin-top: 2rem;
+}
+
+/* Deuxieme section */
+
+.imgSiteWeb {
+  flex-basis: 40%;
+  margin-left: 2rem;
+}
+
+.presentation {
+  margin: auto 0;
+  flex-basis: 60%;
+}
+
+.presentation h2 {
+  font-family: "Nunito900";
+}
+
+/* Troisième section */
+
+section:nth-of-type(3) {
+  font-family: "NunitoRegular";
+}
+
+section:nth-of-type(3),
+section:nth-of-type(4) {
+  margin: 9.6rem 0;
+}
+
+section:nth-of-type(3) h2,
+section:nth-of-type(4) h2,
+section:nth-of-type(5) h2 {
+  display: flex;
+  justify-content: center;
+  font-family: "Nunito900";
+  color: var(--colorBgBlue);
+  font-size: 3rem;
+}
+
+.sous_titre {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3.2rem;
+}
+
+section:nth-of-type(3) h2::after,
+section:nth-of-type(4) h2::after,
+section:nth-of-type(5) h2::after {
+  content: "";
+  display: block;
+  width: 10rem;
+  height: 0.3rem;
+  background: var(--colorBgBlue);
+  margin: 0.6em;
+}
+
+section:nth-of-type(3) h2::before,
+section:nth-of-type(4) h2::before,
+section:nth-of-type(5) h2::before {
+  content: "";
+  display: block;
+  width: 10rem;
+  height: 0.3rem;
+  background: var(--colorBgBlue);
+  margin: 0.6em;
+}
+
+#competences {
+  display: flex;
+  margin-top: 3.2rem;
+}
+
+#competences .developpement,
+#competences .domaines {
+  flex: 1;
+}
+
+.domaines {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.domaines .listDomaines {
+  margin-top: 2rem;
+}
+
+.domaines .listDomaines h4 {
+  display: flex;
+  align-items: center;
+  color: var(--colorTitle);
+}
+
+.domaines .listDomaines h4 svg {
+  margin-right: 1rem;
+  width: 2rem;
+}
+
+.domaines .listDomaines span {
+  font-size: 1.2rem;
+  margin-left: 3rem;
+  font-style: italic;
+}
+
+.domaines .listDomaines .exp {
+  margin-bottom: 1rem;
+}
+
+.developpement .langages {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.developpement .langages svg,
+.Compgraphique svg {
+  margin: 2rem;
+  width: 5rem;
+}
+
+.developpement .langages svg:nth-of-type(6),
+.developpement .langages svg:nth-of-type(7),
+.developpement .langages svg:nth-of-type(13) {
+  width: 10rem;
+}
+
+/* Quatrième section */
+
+section:nth-of-type(4) p:nth-of-type(2) {
+  margin: 4rem 0;
+}
+
+#formations {
+  display: flex;
+  justify-content: space-between;
+}
+
+#formations .formation {
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  flex-basis: 30%;
+}
+
+#formations .formation svg {
+  width: 6rem;
+}
+
+.formation .header_formation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+}
+
+.formation .header_formation hr {
+  width: 50%;
+  background-color: black;
+  height: 0.4rem;
+}
+
+.formation .header_formation p {
+  margin-bottom: 1rem;
+}
+
+.formation .header_formation h4 {
+  font-size: 2rem;
+  margin-top: 0.3rem;
+}
+
+.formation .header_formation h5,
+.formation .header_formation a {
+  font-size: 1.5rem;
+  margin: 1rem;
+  color: var(--colorTitle);
+}
+
+.formation p {
+  padding: 1rem;
+  text-align: center;
+}
+
+.formation .footer_formation {
+  background-color: var(--colorBgBlue);
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.formation .footer_formation button {
+  padding: 1rem;
+  border-radius: 2rem;
+  border: none;
+  background-color: var(--colorTextBgBlue);
+  font-family: "Nunito900";
+}
+
+.formation .footer_formation button a {
+  color: #131418;
+}
+
+.pdf svg {
+  width: 5rem;
+}
+
+.pdf {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.pdf a {
+  margin-left: 1rem;
+  font-size: 2rem;
+  color: var(--colorTitle);
+}
+
+/* Cinquième section */
+
+.projet {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.projet .img {
+  flex-basis: 60%;
+  padding-right: 2rem;
+}
+
+.projet .img img {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.description_projet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+}
+
+.description_projet h3 {
+  margin: 2rem 0;
+}
+
+.description_projet button {
+  width: 20%;
+  padding: 0.5em;
+  background-color: var(--colorBgBlue);
+  border: none;
+  border-radius: 0.2rem;
+  color: var(--colorTextBgBlue);
+  font-family: "Nunito900";
+}
+
+/* Footer */
+
+footer {
+  margin-top: 12rem;
+  background-color: var(--colorBgBlue);
+  color: var(--colorTextBgBlue);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer * {
+  margin: 1rem 0;
+}
+
+.footer p {
+  font-style: italic;
+}
+
+.footer .foot_add {
+  font-family: "Nunito900";
+  color: var(--colorTitle);
+}
+
+.footer_menu a {
+  font-family: "Nunito900";
+  color: var(--colorTextBoldBgBlue);
+}
+
+footer h1 span {
+  color: orange;
+}
+
+footer .footer_reseaux svg {
+  width: 2rem;
+  fill: var(--colorTextBgBlue);
+}
